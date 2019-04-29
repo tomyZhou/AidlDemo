@@ -72,4 +72,30 @@ AIDL（Android Interface Definition Language）是Android接口定义语言的�
 简单来说是这样的：比如现在我们要将一个对象的数据从客户端传到服务端去，我们就可以在客户端对这个对象进行序列化的操作，将其中包含的数据转化为序列化流，
 
 然后将这个序列化流传输到服务端的内存中去，再在服务端对这个数据流进行反序列化的操作，从而还原其中包含的数据——通过这种方式，我们就达到了在一个进程中访问另一个进程的数据的目的。
+
+.aidl 文件分两种：
+
+1.定义接口，方法的
+
+package com.demo.aidlprojectserver;
+
+import com.demo.aidlprojectserver.Person;
+
+interface IPersonManager {
+    List<Person> getPersons();
+
+    void addPerson(in Person person); //除了基本数据类型，要添加 in out inout
+
+    String greet(String name);
+
+}
+
+
+2.定义对象的
+
+// Person.aidl
+package com.demo.aidlprojectserver;
+
+parcelable Person;
+
    
