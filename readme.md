@@ -36,7 +36,7 @@ Service和Thread没有半毛钱的关系，所以如果在Service中执行耗时
 3. 独立于主进程完成任务，不会因为主进程出问题而受影响。为及时推送消息，和及时数据统计不受当前进程退出的影响，我们可以使用独立的进程来完成这个任务。
 
 
-远程服务 AIDL
+3.远程服务 AIDL
 
 AIDL（Android Interface Definition Language）是Android接口定义语言的意思，它可以用于让某个Service与多个应用程序组件之间进行跨进程通信，从而可以实现多个应用程序共享同一个Service的功能。
 
