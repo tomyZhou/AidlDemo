@@ -94,6 +94,7 @@ interface IPersonManager {
 2.定义对象的
 
 // Person.aidl
+
 package com.demo.aidlprojectserver;
 
 parcelable Person;
