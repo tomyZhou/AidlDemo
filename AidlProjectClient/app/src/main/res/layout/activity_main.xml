@@ -21,6 +21,14 @@
         android:id="@+id/bt_add"
         android:layout_width="match_parent"
         android:layout_height="50dip"
+        android:layout_margin="10dip"
         android:text="add Person" />
+
+    <Button
+        android:id="@+id/bt_greet"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_margin="10dip"
+        android:text="欢迎" />
 
 </LinearLayout>

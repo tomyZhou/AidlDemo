@@ -41,6 +41,11 @@ public class AIDLService extends Service {
             Log.d(TAG, "client add person-----" + person.toString());
             mPersons.add(person);
         }
+
+        @Override
+        public String greet(String name) {
+            return "热烈祝贺" + name + "来我院视察";
+        }
     };
 
     @Override

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.demo.aidlprojectserver.IPersonManager;
 import com.demo.aidlprojectserver.Person;
@@ -39,10 +40,23 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bt_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(connected){
-                    Person person = new Person("lili","女",18);
+                if (connected) {
+                    Person person = new Person("lili", "女", 18);
                     try {
                         manager.addPerson(person);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        findViewById(R.id.bt_greet).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (connected && manager != null) {
+                    try {
+                        Toast.makeText(MainActivity.this, manager.greet("曹操"), 0).show();
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
